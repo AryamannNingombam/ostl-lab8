@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q9</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-div {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .error {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="main-div">
+        <div class="child">
+            <text>Name[take only capital letters] : </text>
+            <input id="name" type="text">
+            <span class="error" id="name-error"></span>
+        </div>
+        <div class="child">
+            <text>Password[show stars] : </text>
+            <input style="-webkit-text-security: circle;" id="password" type="password">
+            <span class="error" id="password-error"></span>
+        </div>
+        <div class="child">
+            <text>Phone Number[10 digits only] :</text>
+            <input id="phonenumber">
+            <span class="error" id="phonenumber-error"></span>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('name')
+        .addEventListener('input', (e) => {
+            const value = e.target.value;
+            if (value !== value.toUpperCase()) {
+                document.getElementById('name-error').innerText = 'Name should be in capital letters';
+            } else {
+                document.getElementById('name-error').innerText = '';
+            }
+        })
+    document.getElementById('password')
+        .addEventListener('input', (e) => {
+            const value = e.target.value;
+
+        })
+    document.getElementById('phonenumber')
+        .addEventListener('input', (e) => {
+            const value = e.target.value;
+            if (!isNaN(value)) {
+                if (value.length == 10) {
+                    document.getElementById('phonenumber-error').innerHTML = '';
+                } else {
+                    document.getElementById('phonenumber-error').innerHTML = 'Phone number should be 10 digits';
+                }
+            } else {
+                document.getElementById('phonenumber-error').innerHTML = 'Phone number should be only digits';
+            }
+        })
+</script>
+
+</html>

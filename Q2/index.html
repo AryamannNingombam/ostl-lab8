@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+</head>
+<style>
+    .main-div {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div class="main-div">
+        <h3>RESULTS</h3>
+        <h4>Sum : <span id="sum"></span></h4>
+        <h4>Product : <span id="product"></span></h4>
+        <button id="recompute">Compute again</button>
+    </div>
+</body>
+<script>
+    function ReturnResult() {
+        const input = prompt("Enter the numbers separated by comma");
+        const elements = input.split(",");
+        let sum = 0;
+        for (let i = 0; i < elements.length; i++) {
+            sum += parseInt(elements[i]);
+        }
+        document.getElementById("sum").innerHTML = sum;
+        let product = 1;
+        for (let i = 0; i < elements.length; i++) {
+            product *= parseInt(elements[i]);
+        }
+        document.getElementById("product").innerHTML = product;
+        alert(`Sum : ${sum} \nProduct : ${product}`);
+    }
+    ReturnResult()
+    document.getElementById("recompute").addEventListener("click", ReturnResult);
+</script>
+
+</html>

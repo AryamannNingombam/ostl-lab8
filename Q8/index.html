@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-div {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .color-container {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="main-div">
+        <div class="child">
+            <label for="red">Red</label>
+            <input checked="checked" type="radio" name="color" id="red">
+        </div>
+        <div class="child">
+            <label for="green">Green</label>
+            <input type="radio" name="color" id="green">
+        </div>
+        <div class="child">
+            <label for="blue">Blue</label>
+            <input type="radio" name="color" id="blue">
+        </div>
+
+
+        <div class="color-container"></div>
+    </div>
+</body>
+<script>
+    const colorContainer = document.querySelector(".color-container");
+    const red = document.getElementById("red");
+    const green = document.getElementById("green");
+    const blue = document.getElementById("blue");
+    red.addEventListener("click", () => {
+        colorContainer.style.backgroundColor = "red";
+    });
+    green.addEventListener("click", () => {
+        colorContainer.style.backgroundColor = "green";
+    });
+    blue.addEventListener("click", () => {
+        colorContainer.style.backgroundColor = "blue";
+    });
+</script>
+
+</html>
