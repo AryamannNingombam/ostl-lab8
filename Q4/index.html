@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q3</title>
-</head>
-<style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q4</title>
+  </head>
+  <style>
     * {
-        padding: 0;
-        margin: 0;
+      padding: 0;
+      margin: 0;
     }
 
     .main-div {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div class="main-div">
-        <input type="text" id="input">
-        <button id="compute">Check Type</button>
-
+      <input type="text" id="input" />
+      <button id="compute">Check Type</button>
+      <div id="result"></div>
     </div>
-</body>
-<script>
-
-
-
-</script>
-
+  </body>
+  <script>
+    document.getElementById("compute").addEventListener("click", (e) => {
+      const input = document.getElementById("input").value;
+      let result = document.getElementById("result");
+      if (input === "") {
+        result.innerHTML = "Please enter a value";
+      } else if (!isNaN(input)) {
+        result.innerHTML = "It is a number";
+      } else if (
+        input.toLowerCase() == "true" ||
+        input.toLowerCase() == "false"
+      ) {
+        result.innerHTML = "It is a boolean";
+      } else {
+        result.innerHTML = "It is a string";
+      }
+    });
+  </script>
 </html>

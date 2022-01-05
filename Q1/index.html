@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+  </body>
+  <script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    context.fillStyle = "red";
+    context.beginPath();
+    context.rect(0, 0, 200, 300);
+    context.fill();
+    context.fillStyle = "blue";
+    context.beginPath();
+    context.translate(70, 0);
+    context.rotate((30 * Math.PI) / 180);
+    context.rect(0, 0, 200, 300);
+    context.fill();
+  </script>
+</html>
